@@ -4,7 +4,7 @@ import { Switcher } from "./components/Switcher";
 function App() {
   return (
     <FormConfigContextProvider>
-      <div className="layout-px pt-10">
+      <div className="layout-px py-10">
         <Switcher />
       </div>
     </FormConfigContextProvider>
