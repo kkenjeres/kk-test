@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useFormConfig, initialConfig } from "../store/FormConfigContext";
-import { Button } from "./ui-kit/Button";
-import { Input } from "./ui-kit/Input";
-import { Radio } from "./ui-kit/Radio";
-import { Checkbox } from "./ui-kit/Checkbox";
-import { Textarea } from "./ui-kit/Textarea";
-import { getNumberValue, getStringValue, getDateValue } from "../utils/fieldValidators";
+import { Button } from "../common/ui-kit/Button";
+import { Input } from "../common/ui-kit/Input";
+import { Radio } from "../common/ui-kit/Radio";
+import { Checkbox } from "../common/ui-kit/Checkbox";
+import { Textarea } from "../common/ui-kit/Textarea";
+import {
+  getNumberValue,
+  getStringValue,
+  getDateValue,
+} from "../utils/fieldValidators";
 
 interface ResultFormValues {
   [label: string]: string | number | boolean;
@@ -20,7 +24,7 @@ export const Result = () => {
       return acc;
     }, {})
   );
-  
+
   const handleChange = (id: string, value: string | number | boolean) => {
     setFormData((prev) => ({
       ...prev,
@@ -59,9 +63,7 @@ export const Result = () => {
                 placeholder="Enter a number"
                 type="number"
                 value={getNumberValue(formData[field.id])}
-                onChange={(e) =>
-                  handleChange(field.id, Number(e.target.value))
-                }
+                onChange={(e) => handleChange(field.id, Number(e.target.value))}
               />
             )}
             {field.type === "text" && (

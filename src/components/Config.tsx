@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useFormConfig } from "../store/FormConfigContext";
-import { Button } from "./ui-kit/Button";
-import { Textarea } from "./ui-kit/Textarea";
+import { Button } from "../common/ui-kit/Button";
+import { Textarea } from "../common/ui-kit/Textarea";
 import { validateConfig, ValidationError } from "../utils/configValidator";
-import { Error } from "./ui-kit/Erorr";
+import { Error } from "../common/ui-kit/Erorr";
 
 export const Config = () => {
   const { formConfig, setFormConfig } = useFormConfig();
