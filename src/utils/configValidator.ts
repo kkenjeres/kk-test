@@ -1,4 +1,4 @@
-import { FieldConfig } from "../store/FormConfigContext";
+import { FieldConfig } from "../types/formTypes";
 const VALID_TYPES = ["number", "checkbox", "text", "textarea", "date", "enum"];
 
 export interface ValidationError {
