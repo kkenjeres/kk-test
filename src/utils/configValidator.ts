@@ -34,14 +34,16 @@ export const validateConfig = (config: unknown): ValidationError[] => {
 
     if (field.type === "date") {
       const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-      if (typeof field.value !== "string" || !dateRegex.test(field.value)) {
+      if (
+        typeof field.value === "string" &&
+        field.value !== "" &&
+        !dateRegex.test(field.value)
+      ) {
         errors.push({
           message: `Field "${fieldLabel}" has an invalid date format: "${field.value}". Expected format: YYYY-MM-DD.`,
         });
       }
     }
-    
-    
   });
 
   return errors;
